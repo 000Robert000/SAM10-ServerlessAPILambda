@@ -1,0 +1,8 @@
+{
+    "name": "23-1360-266/bref-payroll-api",
+    "require": {
+        "bref/bref": "^3.0",
+        "dompdf/dompdf": "^3.1",
+        "aws/aws-sdk-php": "^3.401"
+    }
+}

@@ -1,0 +1,31 @@
+service: bref-payroll-api
+
+provider:
+  name: aws
+  runtime: php-84-fpm
+  region: us-east-2
+  environment:
+    S3_BUCKET_NAME: santiago-pay-bucket
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:GetObject
+          Resource: "arn:aws:s3:::santiago-pay-bucket/payslips/*"
+
+plugins:
+  - ./vendor/bref/bref
+
+functions:
+  api:
+    handler: index.php
+    events:
+      - httpApi: '*'
+
+package:
+  patterns:
+    - 'data/**'
+    - 'vendor/**'
+    - 'index.php'
