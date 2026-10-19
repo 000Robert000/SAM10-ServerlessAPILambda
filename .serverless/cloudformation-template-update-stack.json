@@ -99,7 +99,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-2-464c7642-1e13",
-          "S3Key": "serverless/bref-payroll-api/dev/1792406823524-2026-10-19T10:47:03.524Z/bref-payroll-api.zip"
+          "S3Key": "serverless/bref-payroll-api/dev/1792408852468-2026-10-19T11:20:52.468Z/bref-payroll-api.zip"
         },
         "Handler": "index.php",
         "Runtime": "provided.al2023",
@@ -127,14 +127,14 @@
         "ApiLogGroup"
       ]
     },
-    "ApiLambdaVersionnWeMZ74xEIWGLREXvMvcf0vWWYkbwDhpAwCI4v0kLt0": {
+    "ApiLambdaVersionblRRhO7c4jnQU5OU5lZ7xWRu6eQMV3i4zoQm4kFisrk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ApiLambdaFunction"
         },
-        "CodeSha256": "KstlriTVyk+WR6FHZwsWif1fEXmq3oASctZLPBHIbmk="
+        "CodeSha256": "M6xPo/aIVnKYTAeeyYZ0VK4vxo0S0uzJ7ON0fGUnyv4="
       }
     },
     "HttpApi": {
@@ -243,7 +243,7 @@
     "ApiLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ApiLambdaVersionnWeMZ74xEIWGLREXvMvcf0vWWYkbwDhpAwCI4v0kLt0"
+        "Ref": "ApiLambdaVersionblRRhO7c4jnQU5OU5lZ7xWRu6eQMV3i4zoQm4kFisrk"
       },
       "Export": {
         "Name": "sls-bref-payroll-api-dev-ApiLambdaFunctionQualifiedArn"

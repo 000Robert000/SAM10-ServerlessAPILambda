@@ -167,12 +167,12 @@ function generatePayslipPdf($payrollId) {
     $dompdf->render();
     $pdfOutput = $dompdf->output();
 
-    $bucketName = getenv('S3_BUCKET_NAME') ?: 'payroll-payslips-sam10';
+    $bucketName = getenv('S3_BUCKET_NAME') ?: 'santiago-pay-bucket';
     $s3Key = "payslips/{$payrollId}.pdf";
 
     $s3Client = new S3Client([
         'version' => 'latest',
-        'region'  => 'us-east-1'
+        'region'  => 'ap-southeast-2'
     ]);
 
     $s3Client->putObject([
@@ -182,7 +182,7 @@ function generatePayslipPdf($payrollId) {
         'ContentType' => 'application/pdf'
     ]);
 
-    $s3Url = "https://{$bucketName}.s3.amazonaws.com/{$s3Key}";
+    $s3Url = "https://{$bucketName}.s3.ap-southeast-2.amazonaws.com/{$s3Key}";
 
     echo json_encode([
         'success' => true,
